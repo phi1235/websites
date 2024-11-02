@@ -1,3 +1,102 @@
-.container{
-    background-color: aqua;
-}
+    body {
+        background-image: url('/images/bgr.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+
+    .card {
+    margin-bottom: 50vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+    }
+    /* Main container styling */
+    .login-container {
+        min-height: 100vh;
+        display: flex;
+        color: white;
+        justify-content: flex-end; /* Căn container form qua phải */
+        padding-right: 100px; /* Điều chỉnh khoảng cách bên phải nếu cần */
+    }
+
+    /* Left section styling */
+    .left-section {
+        max-width: 40%;
+        padding: 20px;
+        color: #ffffff;
+        margin-right:5%;
+    }
+
+    .left-section h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .left-section p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+
+    .features {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .features li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+    /* Right section (Login form) styling */
+    .right-section {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+        border: none;
+    }
+
+    .login-card h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .social-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .forgot-password {
+        font-size: 0.9rem;
+        color: #555555;
+        text-decoration: none;
+    }
+
+    .signup-link {
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .signup-link:hover {
+        color: #218838;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+    .btn-success:hover {
+        background-color: #218838;
+    }

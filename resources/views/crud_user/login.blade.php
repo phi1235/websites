@@ -2,48 +2,93 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-<main class="login-form">
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-6">
-                <div class="card">
-                    <h3 class="card-header text-center">Login</h3>
-                    <div class="card-body">
-                        @if(session('error'))
-                            <div class="alert alert-danger text-center">{{ session('error') }}</div>
-                        @endif
-                        <form method="POST" action="{{ route('login.custom') }}">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" placeholder="Email" id="email" class="form-control" name="email" required autofocus>
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-block">Login</button>
-                            </div>
-                        </form>
-                        <div class="text-center mt-4">
-                        
-                        <a href="{{ route('register-user') }}" class="btn btn-danger btn-block mb-2">Register</a>
-                            </div>
-                            <a href="{{ route('social.login', 'google') }}" class="btn btn-danger btn-block mb-2">Login with Google</a>
-                            <a href="{{ route('social.login', 'facebook') }}" class="btn btn-primary btn-block mb-2">Login with Facebook</a>
-                            <a href="{{ route('social.login', 'github') }}" class="btn btn-dark btn-block">Login with GitHub</a>
+
+<div class="container-fluid login-container">
+    <!-- Left section -->
+    <div class="left-section">
+        <h1>Become a user</h1>
+        <p>Free to use, easy to love</p>
+        <ul class="features">
+            <li>✅ Track your progress</li>
+            <li>✅ Set your goals</li>
+            <li>✅ Get a personalized learning path</li>
+            <li>✅ Test your skills</li>
+            <li>✅ Practice coding in browser</li>
+            <li>✅ Build and host a website</li>
+            <li>✅ Teacher Toolbox</li>
+        </ul>
+    </div>
+
+    <!-- Right section (Auth form) -->
+    <div class="col-md-6 right-section d-flex align-items-center justify-content-center">
+        <div class="card login-card" id="auth-card">
+            <!-- Log In Form -->
+            <div id="login-form">
+                <h3 class="card-header text-center">Log In</h3>
+                <div class="card-body">
+                    <div class="social-buttons">
+                        <a href="{{ route('social.login', 'google') }}" class="btn btn-outline-dark btn-block mb-2">Google</a>
+                        <a href="{{ route('social.login', 'facebook') }}" class="btn btn-outline-primary btn-block mb-2">Facebook</a>
+                        <a href="{{ route('social.login', 'github') }}" class="btn btn-outline-dark btn-block mb-2">Github</a>
+                    </div>
+                    <p class="text-center mt-3 mb-3">OR</p>
+                    <form method="POST" action="{{ route('login.custom') }}">
+                        @csrf
+                        <div class="form-group mb-3">
+                            <input type="email" placeholder="Email" id="email" class="form-control" name="email" required autofocus>
                         </div>
+                        <div class="form-group mb-3">
+                            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-4">
+                        <span>Don't have an account?</span> <a href="javascript:void(0);" class="signup-link" onclick="showSignUp()">Sign up</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-form" style="display: none;">
+                <h3 class="card-header text-center">Sign Up</h3>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register.custom') }}">
+                        @csrf
+                        <div class="form-group mb-3">
+                            <input type="text" placeholder="Full Name" id="name" class="form-control" name="name" required autofocus>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="email" placeholder="Email" id="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <input type="password" placeholder="Confirm Password" id="confirm_password" class="form-control" name="confirm_password" required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                    </form>
+                    <div class="text-center mt-4">
+                        <span>Already have an account?</span> <a href="javascript:void(0);" class="login-link" onclick="showLogin()">Log in</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <style>
-        .col-md-6{
-            transform: translate(50px, 100px);
-        }
-    </style>
-</main>
+</div>
 
+<script>
+    function showSignUp() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'block';
+    }
+
+    function showLogin() {
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('login-form').style.display = 'block';
+    }
+</script>
 @endsection

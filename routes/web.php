@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('auth')->name('dashboard');
-Route::get('/login', [App\Http\Controllers\AuthController::class, 'showLoginForm'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.custom');
 Route::get('/register', [App\Http\Controllers\AuthController::class, 'showRegistrationForm'])->name('register-user');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register'])->name('register.custom');
