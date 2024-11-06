@@ -29,18 +29,18 @@
         </div>
         <div class="d-flex justify-content-between">
 
-            <button type="submit" class="btn btn-success ">Login</button>
+            <button type="submit" class="btn btn-success "style="width:100%">Login</button>
         </div>
     </form>
     <p class="text-center mt-3 mb-3">OR</p>
     <div class="social-buttons">
-        <a href="{{ route('social.login', 'google') }}" class="btn btn-google btn-block mb-2">Google</a>
-        <a href="{{ route('social.login', 'facebook') }}" class="btn btn-outline-primary btn-block mb-2">Facebook</a>
-        <a href="{{ route('social.login', 'github') }}" class="btn btn-outline-dark btn-block mb-2">Github</a>
+        <a href="{{ route('social.login', 'google') }}" class="btn btn-google btn-block mb-2"> <i class="fab fa-google me-2"></i> Google</a>
+        <a href="{{ route('social.login', 'facebook') }}" class="btn btn-outline-primary btn-block mb-2"> <i class="fab fa-facebook-f me-2"></i> Facebook</a>
+        <a href="{{ route('social.login', 'github') }}" class="btn btn-outline-dark btn-block mb-2"><i class="fab fa-github me-2"></i> Github</a>
     </div>
     <div class="text-center mt-4">
         <a href="#" class="forgot-password">Bạn chưa có tài khoản?</a>
-        <a href="{{ route('register-user') }}" class="signup-link">Sign up</a>
+        <a href="{{ route('register-user') }}" class="signup-link">Register</a>
     </div>
 </div>
 <!-- <script src="{{ asset('js/login.js') }}"></script> -->

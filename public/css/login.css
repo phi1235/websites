@@ -8,7 +8,7 @@
         overflow: hidden;
     }
 
-    
+
 
     .is-valid {
         border-color: green;
@@ -33,7 +33,6 @@
         padding: 8px 15px;
         /* Giảm padding để thông báo gọn hơn */
         font-size: 14px;
-        /* Giảm font-size nếu muốn */
         /* Khoảng cách phía trên thông báo */
         border-radius: 5px;
         /* Tạo góc bo tròn nhẹ */
@@ -41,6 +40,9 @@
         width: 100%;
     }
 
+    /* .btn-site{
+
+    } */
     .position {
         margin-top: 10px;
     }
@@ -126,10 +128,13 @@
     }
 
     .social-buttons a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
+        display: inline-block;
+        /* Giúp các nút nằm trên cùng một hàng */
+        margin: 0 10px;
+        /* Thêm khoảng cách giữa các nút */
+        padding: 10px 12px;
+        font-size: 14px;
+        cursor: pointer;
     }
 
     .forgot-password {

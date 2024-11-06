@@ -34,7 +34,7 @@
         </div>
 
         <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-success">Register</button>
+            <button type="submit" class="btn btn-success"style="width:100%">Register</button>
         </div>
     </form>
     <br>
