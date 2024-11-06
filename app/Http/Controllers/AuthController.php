@@ -60,7 +60,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'password' => 'required|string|min:1|confirmed',
         ]);
 
         // Nếu xác thực thất bại, trả về thông báo lỗi
@@ -76,7 +76,7 @@ class AuthController extends Controller
         ]);
 
         // Chuyển hướng đến trang đăng nhập với thông báo thành công
-        return redirect()->route('login')->with('success', 'Registration successful! Please log in.');
+        return redirect()->route('login')->with('success', 'Đăng ký thành công, vui lòng đăng nhập.');
     }
 }
 

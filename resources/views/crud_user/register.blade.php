@@ -1,51 +1,49 @@
-@extends('dashboard')
+@extends('auth_layout')
 
-@section('content')
-<main class="register-form">
-    <div class="container">
-        <div class="row justify-content-center mt-5">
-            <div class="col-md-4">
-                <div class="card">
-                    <h3 class="card-header text-center">Register</h3>
-                    <div class="card-body">
-                        @if(session('success'))
-                            <div class="alert alert-success text-center">{{ session('success') }}</div>
-                        @endif
-                        <form method="POST" action="{{ route('register.custom') }}">
-                            @csrf
-                            <div class="form-group mb-3">
-                                <input type="text" placeholder="Name" id="name" class="form-control" name="name" required autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="text-danger">{{ $errors->first('name') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="email" placeholder="Email" id="email" class="form-control" name="email" required>
-                                @if ($errors->has('email'))
-                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
-                                @if ($errors->has('password'))
-                                    <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif
-                            </div>
-                            <div class="form-group mb-3">
-                                <input type="password" placeholder="Confirm Password" id="password_confirmation" class="form-control" name="password_confirmation" required>
-                            </div>
-                            <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Register</button>
-                            </div>
-                        </form>
-                        <br>
-                        <div class="text-center">
-                            <a href="{{ route('login') }}">Đã có tài khoản? Đăng nhập</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+@section('form')
+<h3 class="card-header text-center">Register</h3>
+<div class="card-body">
+    <form method="POST" action="{{ route('register.custom') }}">
+        @csrf
+        <div class="form-group mb-3">
+            <input type="text" placeholder="Name" id="name" class="form-control" name="name" required>
+            <span id="name-check" class="text-danger"></span>
+            @error('name')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
         </div>
+        <div class="form-group mb-3">
+            <input type="email" placeholder="Email" id="email" class="form-control" name="email" required>
+            <span id="email-check" class="text-danger"></span>
+            @error('email')
+                <span class="text-danger">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <!-- Ô nhập mật khẩu -->
+        <div class="form-group mb-3">
+            <input type="password" placeholder="Password" id="password" class="form-control" name="password" required>
+            <span id="password-check" class="text-danger"></span>
+        </div>
+
+        <!-- Ô nhập lại mật khẩu -->
+        <div class="form-group mb-3">
+            <input type="password" placeholder="Confirm Password" id="password_confirmation" class="form-control"
+                name="password_confirmation" required>
+            <span id="match-check" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Register</button>
+        </div>
+    </form>
+    <br>
+    <div class="text-center mt-4">
+        <a href="#" class="forgot-password">Đã có tài khoản?</a>
+        <a href="{{ route('login') }}" class="signup-link"> Đăng nhập</a>
     </div>
-</main>
+</div>
+
+<!-- Gọi file JavaScript -->
+<script src="{{ asset('js/register.js') }}"></script>
 @endsection

@@ -8,19 +8,73 @@
         overflow: hidden;
     }
 
+    
+
+    .is-valid {
+        border-color: green;
+    }
+
+    .is-invalid {
+        border-color: red;
+    }
+
+    .text-success {
+        color: green;
+    }
+
+    .text-danger {
+        color: red;
+    }
+
+
+
+    .alert {
+        position: absolute;
+        padding: 8px 15px;
+        /* Giảm padding để thông báo gọn hơn */
+        font-size: 14px;
+        /* Giảm font-size nếu muốn */
+        /* Khoảng cách phía trên thông báo */
+        border-radius: 5px;
+        /* Tạo góc bo tròn nhẹ */
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .position {
+        margin-top: 10px;
+    }
 
     .card {
-    margin-bottom: 50vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    
+        margin-bottom: 50vh;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
     }
+
+    .card-body {
+        margin-top: 40px;
+    }
+
+    .btn-google {
+        color: #af1a1a;
+        border-color: #af1a1a;
+
+    }
+
+    .btn-google:hover {
+        background-color: #af1a1a;
+        color: #fff;
+    }
+
     /* Main container styling */
     .login-container {
         min-height: 100vh;
         display: flex;
         color: white;
-        justify-content: flex-end; /* Căn container form qua phải */
-        padding-right: 100px; /* Điều chỉnh khoảng cách bên phải nếu cần */
+        justify-content: flex-end;
+        /* Căn container form qua phải */
+        padding-right: 100px;
+        /* Điều chỉnh khoảng cách bên phải nếu cần */
     }
 
     /* Left section styling */
@@ -28,7 +82,7 @@
         max-width: 40%;
         padding: 20px;
         color: #ffffff;
-        margin-right:5%;
+        margin-right: 5%;
     }
 
     .left-section h1 {
@@ -97,6 +151,7 @@
         background-color: #28a745;
         border: none;
     }
+
     .btn-success:hover {
         background-color: #218838;
     }
