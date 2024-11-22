@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     
      protected $fillable = [
-        'name', 'email', 'provider', 'provider_id', 'avatar', 'password',
+        'name', 'email', 'provider', 'provider_id', 'avatar', 'password', 'role',
     ];
 
     /**
@@ -41,4 +41,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+     // Thêm các helper methods
+     public function isAdmin()
+     {
+         return $this->role === 'admin';
+     }
+ 
+     public function isEditor()
+     {
+         return $this->role === 'editor';
+     }
 }

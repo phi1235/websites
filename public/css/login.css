@@ -1,162 +1,122 @@
-    body {
-        background-image: url('/images/bgr.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        height: 100vh;
-        margin: 0;
-        overflow: hidden;
-    }
+body {
+    background: #f8f9fa;
+}
 
+.card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
 
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+}
 
-    .is-valid {
-        border-color: green;
-    }
+.card-body {
+    padding: 30px;
+}
 
-    .is-invalid {
-        border-color: red;
-    }
+.form-control {
+    border-radius: 4px;
+    padding: 10px 15px;
+}
 
-    .text-success {
-        color: green;
-    }
+.btn {
+    padding: 10px 20px;
+    border-radius: 4px;
+}
 
-    .text-danger {
-        color: red;
-    }
+.social-buttons .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.btn-google {
+    background-color: #DB4437;
+    color: white;
+}
 
+.btn-google:hover {
+    background-color: #C1351D;
+    color: white;
+}
 
-    .alert {
-        position: absolute;
-        padding: 8px 15px;
-        /* Giảm padding để thông báo gọn hơn */
-        font-size: 14px;
-        /* Khoảng cách phía trên thông báo */
-        border-radius: 5px;
-        /* Tạo góc bo tròn nhẹ */
-        z-index: 1000;
-        width: 100%;
-    }
+.forgot-password {
+    color: #6c757d;
+    text-decoration: none;
+    margin-right: 10px;
+}
 
-    /* .btn-site{
+.signup-link {
+    color: #007bff;
+    text-decoration: none;
+}
 
-    } */
-    .position {
-        margin-top: 10px;
-    }
+.alert {
+    margin-bottom: 20px;
+}
+.social-buttons {
+    margin: 0 auto;
+    width: 100%;
+}
 
-    .card {
-        margin-bottom: 50vh;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.social-btn {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
 
-    }
+/* Google button */
+.btn-outline-danger.social-btn {
+    color: #DB4437;
+    border-color: #DB4437;
+}
 
-    .card-body {
-        margin-top: 40px;
-    }
+.btn-outline-danger.social-btn:hover {
+    background-color: #DB4437;
+    color: white;
+    border-color: #DB4437;
+}
 
-    .btn-google {
-        color: #af1a1a;
-        border-color: #af1a1a;
+/* Facebook button */
+.btn-outline-primary.social-btn {
+    color: #4267B2;
+    border-color: #4267B2;
+}
 
-    }
+.btn-outline-primary.social-btn:hover {
+    background-color: #4267B2;
+    color: white;
+    border-color: #4267B2;
+}
 
-    .btn-google:hover {
-        background-color: #af1a1a;
-        color: #fff;
-    }
+/* Github button */
+.btn-outline-dark.social-btn {
+    color: #333;
+    border-color: #333;
+}
 
-    /* Main container styling */
-    .login-container {
-        min-height: 100vh;
-        display: flex;
-        color: white;
-        justify-content: flex-end;
-        /* Căn container form qua phải */
-        padding-right: 100px;
-        /* Điều chỉnh khoảng cách bên phải nếu cần */
-    }
+.btn-outline-dark.social-btn:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
 
-    /* Left section styling */
-    .left-section {
-        max-width: 40%;
-        padding: 20px;
-        color: #ffffff;
-        margin-right: 5%;
-    }
+.gap-2 {
+    gap: 0.5rem !important;
+}
 
-    .left-section h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
+.social-btn i {
+    font-size: 1.2rem;
+}
 
-    .left-section p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-    }
-
-
-    .features {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .features li {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-    }
-
-    /* Right section (Login form) styling */
-    .right-section {
-        background-color: #f8f9fa;
-        padding: 30px;
-        border-radius: 8px;
-    }
-
-    .login-card {
-        width: 100%;
-        max-width: 400px;
-        border: none;
-    }
-
-    .login-card h3 {
-        font-size: 1.8rem;
-        font-weight: bold;
-    }
-
-    .social-buttons a {
-        display: inline-block;
-        /* Giúp các nút nằm trên cùng một hàng */
-        margin: 0 10px;
-        /* Thêm khoảng cách giữa các nút */
-        padding: 10px 12px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-
-    .forgot-password {
-        font-size: 0.9rem;
-        color: #555555;
-        text-decoration: none;
-    }
-
-    .signup-link {
-        color: #28a745;
-        font-weight: bold;
-    }
-
-    .signup-link:hover {
-        color: #218838;
-    }
-
-    .btn-success {
-        background-color: #28a745;
-        border: none;
-    }
-
-    .btn-success:hover {
-        background-color: #218838;
-    }
+/* Hover effect */
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

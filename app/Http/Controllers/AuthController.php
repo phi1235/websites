@@ -36,17 +36,27 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        // Kiểm tra xem người dùng đã đăng nhập chưa
-        if (Auth::check()) {
-            return view('dashboard'); // Trả về view dashboard
+        if(auth()->check()) {
+            // Nếu user là admin, chuyển đến admin dashboard
+            if(auth()->user()->role === 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+            // Nếu là user thường, hiển thị dashboard thông thường
+            return view('dashboard');
         }
         
-        return redirect()->route('login')->with('error', 'Vui lòng đăng nhập để truy cập trang này.');
+        return redirect()->route('login')->with('error', 'Please login first.');
     }
 
     public function logout()
     {
         Auth::logout();
+        
+        // Xóa session
+        session()->invalidate();
+        session()->regenerateToken();
+        
+        // Redirect về trang login thay vì dashboard
         return redirect()->route('login')->with('success', 'Đăng xuất thành công!');
     }
     public function showRegistrationForm()
