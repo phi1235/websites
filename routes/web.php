@@ -7,7 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +25,7 @@ Route::get('/', function () {
 });
 Route::middleware(['auth'])->group(function () {
     // Dashboard route cho user thường
-    Route::get('/dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
-
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     // Admin routes
     Route::prefix('admin')->name('admin.')->middleware(['role:admin'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
@@ -35,6 +35,10 @@ Route::middleware(['auth'])->group(function () {
     });
     
 });
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+// Đổi từ products thành shop
+Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/shop/{product}', [ShopController::class, 'show'])->name('shop.show');
 Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login.custom');

@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class ShopController extends Controller
+{
+    public function index(Request $request)
+    {
+        $query = Product::query();
+        
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('name', 'like', "%{$search}%");
+        }
+        
+        $products = $query->latest()->paginate(12);
+        
+        return view('shop.index', compact('products'));
+    }
+
+    public function show(Product $product)
+    {
+        return view('shop.show', compact('product'));
+    }
+}
