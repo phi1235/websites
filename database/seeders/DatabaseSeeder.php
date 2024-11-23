@@ -1,5 +1,8 @@
 <?php
-
+// Để chạy seeder, sử dụng lệnh:
+// php artisan db:seed
+// Hoặc nếu muốn refresh database và chạy lại seeder:
+// php artisan migrate:fresh --seed
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -20,7 +23,8 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             UserSeeder::class,
-           
+            ProductSeeder::class,
         ]);
     }
+    
 }

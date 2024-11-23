@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Models;
-
+// php artisan cache:clear
+// php artisan config:clear
+// php artisan route:clear
+// php artisan view:clear
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,6 +17,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
+     * 
      *
      * @var array<int, string>
      */

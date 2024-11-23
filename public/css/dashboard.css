@@ -1,0 +1,48 @@
+.dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 8px;
+    margin-top: 2px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.dropdown-container input[readonly] {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Thêm style cho active state */
+.dropdown-item.active {
+    background-color: #e9ecef;
+}

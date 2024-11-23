@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('dashboard');
         Route::resource('users', UserController::class);
         Route::resource('products', ProductController::class); // Thêm route cho products
+    
     });
     
 });

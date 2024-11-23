@@ -1,0 +1,121 @@
+.search-box {
+    position: relative;
+    max-width: 300px;  /* Giới hạn độ rộng */
+    margin-bottom: 15px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.search-box .form-control {
+    height: 35px;  /* Giảm chiều cao */
+    padding: 5px 60px 5px 15px;  /* Điều chỉnh padding */
+    border-radius: 17px;
+    border: 1px solid #6280e2;
+    font-size: 13px;  /* Giảm font size */
+}
+.d-flex.align-items-center.gap-2 {
+    gap: 0.5rem !important;
+}
+.search-box .search-btn,
+.search-box .clear-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    padding: 5px;
+    line-height: 1;
+}
+
+.search-box .clear-btn {
+    right: 30px;
+    color: #858796;
+    display: none;
+    font-size: 12px;
+}
+
+.search-box .search-btn {
+    right: 5px;
+    color: #4e73df;
+    font-size: 12px;
+}
+
+.search-box .form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.15);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .d-sm-flex {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .d-flex.align-items-center.gap-2 {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .search-box {
+        width: 200px;
+    }
+}
+.search-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.search-result-count {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+}
+/* Thêm vào file CSS hiện có */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e3e6f0;
+    border-radius: 4px;
+    margin-top: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fc;
+}
+
+.suggestion-item.active {
+    background-color: #4e73df;
+    color: white;
+}
+/* Khi active thì đổi màu highlight */
+.suggestion-item.active .highlight {
+    background-color: #ffd700;
+    color: #4e73df;
+}
+.highlight {
+    background-color: #fff3cd;
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: #856404;
+}
